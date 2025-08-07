@@ -42,8 +42,21 @@ function addTask() {
         taskInput.value = '';
     }
 
+    // ✅ Event listener for button click
+    addBotton.addEventListener('click', addTask)
+
+    // ✅ Event listener for Enter key press
+    taskInput.addEventListener('keypress', (event) => {
+        if (event.key === "Enter") {
+            addTask();
+        }
+    })
+
+    
 }
 
+// ✅ Invoke addTask once when DOM is loaded (if required by instructions)
+  addTask();
 
 
 
