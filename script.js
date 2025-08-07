@@ -16,25 +16,33 @@ function addTask() {
         return;
     }
 
+    if (taskText !== " "){
             // Create a new <li> element
-        const listItem = document.createElement('li');
-        listItem.textContent = taskText;
+            const listItem = document.createElement('li');
+            listItem.textContent = taskText;
     
-        // Add click event to remove the task
-        removeButton.onclick = () => {
-        taskList.removeChild(listItem);
-    };
+            // Create a new "Remove" button
+            const removeButton = document.createElement('button');
+            removeButton.textContent = 'Remove';
+            removeButton.className = 'remove-btn';
 
-    // Append remove button to <li> and <li> to <ul>
-    listItem.appendChild(removeButton);
-    taskList.appendChild(listItem);
+            // Assign an onclick event to remove the <li> from taskList
+            removeButton.onclick = () => {
+                taskList.removeChild(listItem);
+            };
+            // Append the remove button to the <li>
+            listItem.appendChild(removeButton);
 
-    // Clear the input field
-    taskInput.value = '';
+            // Append the <li> to the task list
+            taskList.appendChild(listItem);
 
+            // Clear the input field
+            taskInput.value = '';
+    }
+
+  
 }
-
- // Attach Event Listener to the "Add Task" button
+  // Attach Event Listener to the "Add Task" button
   addButton.addEventListener('click', addTask);
 
   // Attach Event Listener for Enter key on input field
@@ -43,5 +51,3 @@ function addTask() {
       addTask();
     }
   });
-
-});
