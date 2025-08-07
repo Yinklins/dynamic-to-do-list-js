@@ -8,7 +8,7 @@ const taskList = document.getElementById('task-list');
 // create teh addTast Function
 function addTask() {
     // Get and trim task input
-    const taskText = taskInput.ariaValueMax.trim();
+    const taskText = taskInput.value.trim();
 
     // Check if input is empty
     if (taskText === " ") {
