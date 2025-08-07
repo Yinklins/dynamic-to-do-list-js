@@ -43,7 +43,7 @@ function addTask() {
     }
 
     // ✅ Event listener for button click
-    addBotton.addEventListener('click', addTask)
+    addButton.addEventListener('click', addTask)
 
     // ✅ Event listener for Enter key press
     taskInput.addEventListener('keypress', (event) => {
